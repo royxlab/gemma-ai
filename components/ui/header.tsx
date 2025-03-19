@@ -32,17 +32,6 @@ export function Header() {
           <Link href="/" className="mr-6">
             <Logo />
           </Link>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/edit" className="text-sm font-medium hover:text-primary transition-colors">
-              Editor
-            </Link>
-            <Link href="/generate" className="text-sm font-medium hover:text-primary transition-colors">
-              Generate
-            </Link>
-            <Link href="/gallery" className="text-sm font-medium hover:text-primary transition-colors">
-              Gallery
-            </Link>
-          </nav>
         </div>
         
         {/* Mobile Navigation */}
@@ -84,6 +73,12 @@ export function Header() {
           <Button asChild variant="ghost" size="sm">
             <Link href="/generate">
               <Sparkles className="mr-2 h-4 w-4" /> Create
+            </Link>
+          </Button>
+          
+          <Button asChild variant="ghost" size="sm">
+            <Link href="/gallery">
+              <FolderOpen className="mr-2 h-4 w-4" /> Gallery
             </Link>
           </Button>
           

@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gemma AI - Premium Image Editing Application
+
+A powerful AI-powered image editing application built with Next.js 14, featuring Gemini Flash AI integration for advanced image manipulation.
+
+## Features
+
+- **AI-Powered Image Editing**
+
+  - Basic adjustments (brightness, contrast, saturation)
+  - Image cropping and rotation
+  - AI filters (daytime, night, seasonal, infrastructure aging)
+  - Generative Fill for removing or replacing objects
+
+- **AI Image Generation**
+
+  - Create images from text prompts using Gemini Flash AI
+
+- **Multi-resolution Export**
+
+  - Save images at various resolutions (original, HD, Full HD, 4K, etc.)
+
+- **User Accounts**
+
+  - Secure authentication with Clerk
+  - Save edited images to your account
+  - View and manage saved images in your gallery
+
+- **Modern UI/UX**
+  - Clean, responsive interface
+  - Dark mode support
+  - Mobile-friendly design
+
+## Tech Stack
+
+- **Frontend**
+
+  - Next.js 14 (App Router)
+  - React 18
+  - TypeScript
+  - Tailwind CSS
+  - shadcn/ui components
+
+- **Backend**
+
+  - Next.js API Routes
+  - Prisma ORM
+  - PostgreSQL (Supabase)
+
+- **Authentication**
+
+  - Clerk
+
+- **AI Services**
+  - Google's Gemini Flash AI
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- Gemini API key
+- Supabase PostgreSQL database
+- Clerk account for authentication
+
+### Environment Setup
+
+Create a `.env` file in the root directory with the following variables:
+
+```
+# Gemini API
+GEMINI_API_KEY=your_gemini_api_key
+
+# Database
+DATABASE_URL=your_supabase_connection_string
+DIRECT_URL=your_supabase_direct_connection_string
+
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+```
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/gemma-ai.git
+cd gemma-ai
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Generate Prisma client:
+
+```bash
+npx prisma generate
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/app                     # Next.js App Router pages
+  /account               # User account page
+  /api                   # API routes
+    /images              # Image API endpoints
+  /edit                  # Image editor page
+  /gallery               # Image gallery page
+  /generate              # AI image generation page
+  /sign-in               # Authentication pages
+  /sign-up
 
-## Learn More
+/components              # React components
+  /editor                # Image editing components
+    /tools               # Editing tools (filters, adjustments, etc.)
+  /gallery               # Gallery components
+  /generator             # Image generation components
+  /theme                 # Theme components
+  /ui                    # UI components (buttons, inputs, etc.)
 
-To learn more about Next.js, take a look at the following resources:
+/lib                     # Utility functions and services
+  db.ts                  # Database connection
+  gemini.ts              # Gemini AI integration
+  image-service.ts        # Image handling services
+  user-service.ts         # User data services
+  utils.ts                # General utilities
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features in Detail
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Image Editor
 
-## Deploy on Vercel
+The editor interface allows users to:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Apply basic adjustments like brightness, contrast, and saturation
+- Crop and rotate images
+- Apply AI-powered filters including time-of-day effects, seasonal changes, and infrastructure aging
+- Use generative fill to remove or replace objects in images
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Image Generator
+
+Create original images from text prompts using Gemini's AI:
+
+- Enter detailed descriptions
+- Generate high-quality images
+- Edit generated images directly
+
+### User Gallery
+
+- View all saved images
+- Filter and sort images
+- Edit or delete saved images
+- Share images with others
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Google's Gemini AI for image processing capabilities
+- shadcn/ui for the beautiful component system
+- Clerk for authentication services
+- Supabase for database hosting
