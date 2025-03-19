@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { EditorInterface } from "@/components/editor/EditorInterface";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Image Editor | Gemma AI",
@@ -13,7 +14,9 @@ export default function EditPage() {
         <h1 className="text-3xl font-bold tracking-tight">Image Editor</h1>
         <p className="text-muted-foreground mt-1">Transform your images with AI-powered tools</p>
       </div>
-      <EditorInterface />
+      <Suspense fallback={<div className="h-[600px] flex items-center justify-center">Loading editor...</div>}>
+        <EditorInterface />
+      </Suspense>
     </div>
   );
 }

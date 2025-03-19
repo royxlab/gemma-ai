@@ -84,7 +84,7 @@ CLERK_SECRET_KEY=your_clerk_secret_key
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/gemma-ai.git
+git clone https://github.com/royxlab/gemma-ai.git
 cd gemma-ai
 ```
 
