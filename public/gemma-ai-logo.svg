@@ -1,0 +1,22 @@
+<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main "G" glyph with gradient -->
+  <path d="M25.5 8C16.9396 8 10 14.9396 10 23.5C10 32.0604 16.9396 39 25.5 39C31.2797 39 36.2893 35.8982 38.8223 31.25H31.25C29.3223 33.3475 27.0594 34 25.5 34C19.7012 34 15 29.2988 15 23.5C15 17.7012 19.7012 13 25.5 13C28.8988 13 31.9002 14.6406 33.75 17.1777V12.5H38.75V23.5H28.75V18.5H33.0271C31.6514 16.3174 28.7791 15 25.5 15C20.8056 15 17 18.8056 17 23.5C17 28.1944 20.8056 32 25.5 32C28.3635 32 30.8988 30.5 32.25 28.25H37.1484C35.3877 33.0664 30.8438 37 25.5 37C18.0435 37 12 30.9565 12 23.5C12 16.0435 18.0435 10 25.5 10C31.3115 10 36.2893 13.5869 38.1992 18.75H36.0156C34.2549 15.1611 30.2246 13 25.5 13V8Z" fill="url(#paint0_linear_1_2)"/>
+  
+  <!-- Text as actual text elements -->
+  <text x="50" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#333333">Gemma AI</text>
+  
+  <!-- Decorative dot element -->
+  <circle cx="142" cy="13" r="3" fill="url(#paint1_linear_1_2)"/>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="paint0_linear_1_2" x1="10" y1="23.5" x2="38.8223" y2="23.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_1_2" x1="139" y1="13" x2="145" y2="13" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+</svg> 
