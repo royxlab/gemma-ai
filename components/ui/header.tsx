@@ -27,7 +27,7 @@ import {
 export function Header() {
   return (
     <header className="border-b bg-background/95 backdrop-blur sticky top-0 z-50">
-      <div className="container mx-auto py-3 px-4 flex justify-between items-center">
+      <div className="w-full max-w-6xl mx-auto py-3 px-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/" className="mr-6">
             <Logo />

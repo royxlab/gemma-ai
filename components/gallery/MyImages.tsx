@@ -55,6 +55,13 @@ export function MyImages({ userEmail }: MyImagesProps) {
     setIsLoading(true);
     try {
       const response = await fetch(`/api/images?email=${encodeURIComponent(email)}`);
+      
+      if (!response.ok) {
+        // Handle HTTP error responses
+        const errorText = await response.text();
+        throw new Error(`API error (${response.status}): ${errorText}`);
+      }
+      
       const data = await response.json();
       
       if (data.success) {
@@ -67,11 +74,12 @@ export function MyImages({ userEmail }: MyImagesProps) {
           });
         }
       } else {
+        console.error("API error response:", data);
         toast.error(data.error || "Error loading images");
       }
     } catch (error) {
       console.error("Error fetching images:", error);
-      toast.error("Failed to fetch images");
+      toast.error(error instanceof Error ? error.message : "Failed to fetch images");
     } finally {
       setIsLoading(false);
     }
