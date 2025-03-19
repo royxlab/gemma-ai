@@ -42,40 +42,10 @@ export function Gallery() {
         setImages(JSON.parse(storedImages));
       } catch (error) {
         console.error("Failed to parse stored images:", error);
+        toast.error("Failed to load your images");
       }
     }
   }, []);
-
-  // Demo images for initial gallery
-  useEffect(() => {
-    if (images.length === 0) {
-      const demoImages = [
-        {
-          id: "demo-1",
-          url: "https://source.unsplash.com/random/800x600/?nature",
-          name: "Beautiful Nature Scene",
-          createdAt: Date.now() - 1000 * 60 * 60 * 24 * 2, // 2 days ago
-          tags: ["nature", "landscape"]
-        },
-        {
-          id: "demo-2",
-          url: "https://source.unsplash.com/random/800x600/?cityscape",
-          name: "Urban Cityscape",
-          createdAt: Date.now() - 1000 * 60 * 60 * 24, // 1 day ago
-          tags: ["city", "urban", "architecture"]
-        },
-        {
-          id: "demo-3",
-          url: "https://source.unsplash.com/random/800x600/?portrait",
-          name: "Portrait Study",
-          createdAt: Date.now() - 1000 * 60 * 60 * 2, // 2 hours ago
-          tags: ["portrait", "person"]
-        }
-      ];
-      setImages(demoImages);
-      localStorage.setItem("gallery-images", JSON.stringify(demoImages));
-    }
-  }, [images.length]);
 
   const filteredImages = images.filter(image => 
     image.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
