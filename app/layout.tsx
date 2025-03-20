@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Header } from "@/components/ui/header";
+import { Footer } from "@/components/ui/footer";
 import { Toaster } from "sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
               <main className="flex-1 w-full">
                 {children}
               </main>
+              <Footer />
             </div>
             <Toaster position="top-right" closeButton richColors />
           </ThemeProvider>
